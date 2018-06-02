@@ -1,0 +1,11 @@
+#khafile.js
+*.js
+
+#build folder
+build/
+
+#assets folder
+Assets/
+
+#testing code
+Sources/Main.hx
