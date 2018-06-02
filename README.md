@@ -56,4 +56,4 @@ class Main extends App{
 
 #### Result
 
-![alt text](https://github.com/gmisial/Dia/raw/master/example.png "Glorious example")
+![alt text](https://github.com/gmisail/Dia/raw/master/example.png "Glorious example")
