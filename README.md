@@ -1,8 +1,11 @@
 # Dia
 Lightweight game framework for Haxe
 
-## Example
+## What is Dia?
 
+Dia is a lightweight game framework written in Haxe. The API of Dia is heavily inspired by LÖVE and Haxegon.
+
+## Example
 
 #### Main.hx
 ```
@@ -57,3 +60,18 @@ class Main extends App{
 #### Result
 
 ![alt text](https://github.com/gmisail/Dia/raw/master/example.png "Glorious example")
+
+## Features
+
+[X] Support for textures, tilesets, text, primitives (rectangles)
+[X] Asset cache
+[X] Audio
+[X] Keyboard input
+
+## Planned
+
+[ ] Mouse input
+[ ] Gamepad input
+[ ] Improved input events (justPressed, justReleased)
+[ ] Shaders
+[ ] Improved audio settings (volume, position)
