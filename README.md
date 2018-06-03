@@ -63,15 +63,15 @@ class Main extends App{
 
 ## Features
 
-[X] Support for textures, tilesets, text, primitives (rectangles)
-[X] Asset cache
-[X] Audio
-[X] Keyboard input
+- [X] Support for textures, tilesets, text, primitives (rectangles)
+- [X] Asset cache
+- [X] Audio
+- [X] Keyboard input
 
 ## Planned
 
-[ ] Mouse input
-[ ] Gamepad input
-[ ] Improved input events (justPressed, justReleased)
-[ ] Shaders
-[ ] Improved audio settings (volume, position)
+- [ ] Mouse input
+- [ ] Gamepad input
+- [ ] Improved input events (justPressed, justReleased)
+- [ ] Shaders
+- [ ] Improved audio settings (volume, position)
