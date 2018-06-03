@@ -67,10 +67,10 @@ class Main extends App{
 - [X] Asset cache
 - [X] Audio
 - [X] Keyboard input
+- [X] Mouse input
 
 ## Planned
 
-- [ ] Mouse input
 - [ ] Gamepad input
 - [ ] Improved input events (justPressed, justReleased)
 - [ ] Shaders
