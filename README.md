@@ -68,10 +68,11 @@ class Main extends App{
 - [X] Audio
 - [X] Keyboard input
 - [X] Mouse input
+- [X] Gamepad input
 
 ## Planned
 
-- [ ] Gamepad input
 - [ ] Improved input events (justPressed, justReleased)
 - [ ] Shaders
 - [ ] Improved audio settings (volume, position)
+
