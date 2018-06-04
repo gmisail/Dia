@@ -7,11 +7,14 @@ import kha.Font;
 import kha.Scaler;
 import kha.System;
 import kha.graphics2.Graphics;
+import kha.graphics4.VertexShader;
+import kha.graphics4.FragmentShader;
 
 import dia.graphics.Drawable;
 import dia.graphics.Texture;
 import dia.graphics.Camera;
 import dia.graphics.Tileset;
+import dia.graphics.Shader;
 import dia.util.AssetCache;
 
 class Gfx {
@@ -65,12 +68,18 @@ class Gfx {
 		Dia.core.assetCache.loadTexture(id, new Texture(image));
 	}
 
+	public function preloadTextures(textures : Map <String, Image>) {
+		for(name in textures.keys()) {
+			createTexture(name, textures[name]);
+		}
+	}
+
 	public function getTexture(id : String) : Texture {
 		return Dia.core.assetCache.getTexture(id);
 	}
 
-	public function createTileset(name : String, textureId : String, tileSize : Int) {
-		var tiles = new Tileset(Dia.core.assetCache.getTexture(textureId), tileSize);
+	public function createTileset(name : String, texture : Texture, tileSize : Int) {
+		var tiles = new Tileset(texture, tileSize);
 		tiles.generateTileset();
 		return Dia.core.assetCache.loadTileset(name, tiles);
 	}
@@ -85,6 +94,18 @@ class Gfx {
 
 	public function getFont(id : String) : Font {
 		return Dia.core.assetCache.getFont(id);
+	}
+
+	public function createShader(vert : VertexShader, frag : FragmentShader) : Shader {
+		return new Shader(vert, frag);
+	}
+
+	public function pushShader(shader : Shader) {
+		framebuffer.pipeline = shader.pipelineState;
+	}
+
+	public function popShader() {
+		framebuffer.pipeline = null;
 	}
 
 	public function rectangle(x : Float, y : Float, w : Int, h : Int, ?angle : Float = 0) {
