@@ -6,6 +6,7 @@ import kha.Image;
 import kha.Font;
 import kha.Scaler;
 import kha.System;
+import kha.Assets;
 import kha.graphics2.Graphics;
 import kha.graphics4.VertexShader;
 import kha.graphics4.FragmentShader;
@@ -68,9 +69,9 @@ class Gfx {
 		Dia.core.assetCache.loadTexture(id, new Texture(image));
 	}
 
-	public function preloadTextures(textures : Map <String, Image>) {
+	public function preloadTextures(textures : Map <String, String>) {
 		for(name in textures.keys()) {
-			createTexture(name, textures[name]);
+			createTexture(name, Assets.images.get(textures[name]));
 		}
 	}
 
