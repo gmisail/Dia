@@ -24,11 +24,13 @@ class Gfx {
 	
 	private var backbuffer : Image;
 	private var framebuffer : Graphics;
+	private var backgroundColor : Color;
 
 	public var camera : Camera;
 
 	public function new() {
 		camera = new Camera();
+		backgroundColor = Color.White;
 	}
 
 	public function create() {
@@ -42,7 +44,7 @@ class Gfx {
 			framebuffer = buffer.g2;
 		}
 
-		framebuffer.begin();
+		framebuffer.begin(true, backgroundColor);
 		camera.startCamera(framebuffer);
 	}
 
@@ -140,5 +142,13 @@ class Gfx {
 
 	public function draw(drawable : Drawable) {
 		drawable.draw(framebuffer);
+	}
+
+	public function setBackgroundColor(color : Color) {
+		this.backgroundColor = color;
+	}
+
+	public function getBackgroundColor() : Color {
+		return this.backgroundColor;
 	}
 }
