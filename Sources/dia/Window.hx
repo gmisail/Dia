@@ -10,6 +10,8 @@ class Window {
 	private var RENDERER_WIDTH : Int = 800;
 	private var RENDERER_HEIGHT : Int = 600;
 
+	private var TARGET_FPS : Int = 60;
+
 	public function new() {
 		
 	}
@@ -43,6 +45,14 @@ class Window {
 		this.WINDOW_HEIGHT = h;
 		this.RENDERER_WIDTH = Std.int(w / scale);
 		this.RENDERER_HEIGHT = Std.int(h / scale);
+	}
+
+	public function setTargetFPS(fps : Int) {
+		this.TARGET_FPS = fps;
+	}
+
+	public function getTargetFPS() : Int {
+		return this.TARGET_FPS;
 	}
 
 }

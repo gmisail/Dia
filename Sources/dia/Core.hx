@@ -31,7 +31,7 @@ class Core {
 				
 				if(loadCallback != null) loadCallback();
 
-				Scheduler.addTimeTask(update, 0, 1 / 60);	
+				Scheduler.addTimeTask(update, 0, 1 / Dia.window.getTargetFPS());	
 				System.notifyOnRender(draw);
 			});
 		});
