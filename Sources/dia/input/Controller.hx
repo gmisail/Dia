@@ -4,6 +4,7 @@ class Controller {
 
 	public var id : Int = -1;
 	public var buttons : Map<String, Bool>;
+	public var active : Bool = false;
 
 	public function new(id : Int) {
 		this.id = id;

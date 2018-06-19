@@ -22,7 +22,15 @@ class Core {
 	}
 
 	public function create() {
-		System.init({title: Dia.window.getTitle(), width: Dia.window.getWindowWidth(), height: Dia.window.getWindowHeight()}, function(){
+		System.init({title: Dia.window.getTitle(), 
+			width: Dia.window.getWindowWidth(), 
+			height: Dia.window.getWindowHeight(), 
+			vSync: Dia.window.getVsync(), 
+			samplesPerPixel: Dia.window.getSamplesPerPixel(),
+			resizable: Dia.window.getResizable(),
+			maximizable: Dia.window.getMaximizable(),
+			minimizable: Dia.window.getMinimizable()
+		}, function(){
 			Assets.loadEverything(function(){
 				assetCache = new AssetCache();
 

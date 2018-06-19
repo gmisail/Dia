@@ -22,7 +22,7 @@ class Camera {
 
 	public function startCamera(framebuffer : Graphics) {
 		framebuffer.transformation = matrix;
-		framebuffer.pushRotation(angle, Dia.window.getWindowWidth() / 2, Dia.window.getWindowHeight() / 2);
+		framebuffer.pushRotation(angle, Dia.window.getRendererWidth() / 2, Dia.window.getRendererHeight() / 2);
 	}
 
 	public function stopCamera(framebuffer : Graphics) {

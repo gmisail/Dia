@@ -43,6 +43,8 @@ class Input {
 		for(i in 0...4) {
 			Gamepad.get(i).notify(gamepads[i].onAxis, gamepads[i].onButton);
 		}
+
+		Gamepad.notifyOnConnect(onGamepadConnect, onGamepadDisconnect);
 	}
 
 	public function update() {
@@ -57,6 +59,10 @@ class Input {
 		return justPressed.get(keyCode);
 	}
 
+	public function isGamepadAvailable(id : Int) : Bool {
+		return gamepads[id].active;
+	}
+	
 	public function getButton(controller : Int, button : String) : Bool {
 		return gamepads[controller].buttons[button];
 	}
@@ -72,6 +78,10 @@ class Input {
 	public function getMousePosition() : Vector2 {
 		return mousePosition;
 	}
+
+	/**
+		KEYBOARD EVENTS
+	**/
 	
 	private function onKeyDown(keyCode : KeyCode) {
 		keys.set(keyCode, true);
@@ -80,6 +90,10 @@ class Input {
 	private function onKeyUp(keyCode : KeyCode) {
 		keys.set(keyCode, false);
 	}
+
+	/**
+		MOUSE EVENTS
+	**/
 
 	private function onMouseDown(button : Int, x : Int, y : Int) {
 		mouseButtons.set(button, true);
@@ -96,6 +110,18 @@ class Input {
 
 	private function onMouseWheelMove() {
 
+	}
+
+	/**
+		GAMEPAD (GLOBAL) EVENTS
+	**/
+
+	private function onGamepadConnect(id : Int) {
+		gamepads[id].active = true;
+	}
+
+	private function onGamepadDisconnect(id : Int) {
+		gamepads[id].active = false;
 	}
 
 }
