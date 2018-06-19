@@ -9,9 +9,6 @@ import dia.util.AssetCache;
 
 class Core {
 
-	public var TITLE : String = "][";
-	public var WINDOW_WIDTH : Int = 800;
-	public var WINDOW_HEIGHT : Int = 600;
 	public var TARGET_FPS : Int = 60;
 
 	public var assetCache : AssetCache;
@@ -25,7 +22,7 @@ class Core {
 	}
 
 	public function create() {
-		System.init({title: TITLE, width: WINDOW_WIDTH, height: WINDOW_HEIGHT}, function(){
+		System.init({title: Dia.window.getTitle(), width: Dia.window.getWindowWidth(), height: Dia.window.getWindowHeight()}, function(){
 			Assets.loadEverything(function(){
 				assetCache = new AssetCache();
 

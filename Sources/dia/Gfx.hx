@@ -34,7 +34,7 @@ class Gfx {
 	}
 
 	public function create() {
-		backbuffer = Image.createRenderTarget(Dia.core.WINDOW_WIDTH, Dia.core.WINDOW_HEIGHT);
+		backbuffer = Image.createRenderTarget(Dia.window.getRendererWidth(), Dia.window.getRendererHeight());
 	}
 
 	public function startBuffer(buffer : Framebuffer) {
