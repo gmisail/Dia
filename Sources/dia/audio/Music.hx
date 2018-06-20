@@ -1,6 +1,6 @@
 package dia.audio;
 
-import kha.Sound;
+import kha.Sound in KSound;
 import kha.audio1.Audio;
 
 class Music {
@@ -9,7 +9,7 @@ class Music {
 
 	}
 
-	public function loadAudio(id : String, sound : Sound) : Sound {
+	public function loadAudio(id : String, sound : KSound) : Sound {
 		return Dia.core.assetCache.loadSound(id, sound);
 	}
 
@@ -17,7 +17,7 @@ class Music {
 		return Dia.core.assetCache.getSound(id);
 	}
 
-	public function play(sound : Sound, repeat : Bool) {
+	public function play(sound : KSound, repeat : Bool) {
 		Audio.play(sound, repeat);
 	}
 

@@ -1,8 +1,9 @@
 package dia.util;
 
-import kha.Sound;
+import kha.Sound in KSound;
 import kha.Font;
 
+import dia.audio.Sound;
 import dia.graphics.Texture;
 import dia.graphics.Tileset;
 
@@ -38,7 +39,8 @@ class AssetCache {
 		return tilesetCache.get(id);
 	}
 
-	public function loadSound(id : String, sound : Sound) : Sound {
+	public function loadSound(id : String, sound : KSound) : Sound {
+		var sound = new Sound(sound);
 		audioCache.set(id, sound);
 		return sound;
 	}
