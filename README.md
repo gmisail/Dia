@@ -71,11 +71,11 @@ class Main extends App{
 - [X] Gamepad input
 - [X] Camera
 - [X] Texture & Text preloader
+- [X] Improved audio settings (volume, position)
 
 ## Planned
 
 - [ ] Improved input events (justPressed, justReleased)
 - [ ] Shaders
-- [ ] Improved audio settings (volume, position)
 - [ ] Game saves (native & WebStorage)
 
