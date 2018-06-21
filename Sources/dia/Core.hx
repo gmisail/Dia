@@ -36,6 +36,7 @@ class Core {
 
 				Dia.gfx.create();
 				Dia.input.create();
+				Dia.data.create();
 				
 				if(loadCallback != null) loadCallback();
 

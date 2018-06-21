@@ -72,10 +72,10 @@ class Main extends App{
 - [X] Camera
 - [X] Texture & Text preloader
 - [X] Improved audio settings (volume, position)
+- [X] Game saves (native & WebStorage)
 
 ## Planned
 
 - [ ] Improved input events (justPressed, justReleased)
 - [ ] Shaders
-- [ ] Game saves (native & WebStorage)
 
