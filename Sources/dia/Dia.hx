@@ -15,6 +15,7 @@ class Dia {
 	public static var files : FileIO;
 	public static var random : Random;
 	public static var data : Data;
+	public static var timer : Timer;
 
 	public static function create() {
 		window = new Window();
@@ -25,6 +26,7 @@ class Dia {
 		files = new FileIO();
 		random = new Random();
 		data = new Data();
+		timer = new Timer();
 	}
 
 }

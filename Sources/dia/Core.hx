@@ -40,7 +40,10 @@ class Core {
 				
 				if(loadCallback != null) loadCallback();
 
-				Scheduler.addTimeTask(update, 0, 1 / Dia.window.getTargetFPS());	
+				Scheduler.addTimeTask(update, 0, 1 / Dia.window.getTargetFPS());
+
+				Dia.timer.reset();
+
 				System.notifyOnRender(draw);
 			});
 		});
@@ -59,7 +62,7 @@ class Core {
 	}
 
 	public function update() {
-//		Dia.input.update();
+		Dia.timer.update();
 		if(updateCallback != null) updateCallback();
 	}
 
