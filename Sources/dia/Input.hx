@@ -59,7 +59,9 @@ class Input {
 	}
 
 	public function getKey(keyCode : KeyCode) : Bool {
-		return keys.get(keyCode).getState();
+		if(keys.exists(keyCode))
+			return keys.get(keyCode).getState();
+		return false;
 	}
 
 	public function isGamepadAvailable(id : Int) : Bool {

@@ -19,8 +19,4 @@ class InputState {
 	public function release() {
 		state = false;
 	}
-
-	public function onKeyPress() {
-		
-	}
 }
