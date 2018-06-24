@@ -18,6 +18,7 @@ class Input {
 
 	/* mouse */
 	private var mousePosition : Vector2;
+	private var mouseWheelPosition : Float;
 	private var mouseButtons : Map<Int, Bool>;
 
 	/* gamepad */
@@ -28,6 +29,7 @@ class Input {
 		
 		mousePosition = new Vector2();
 		mouseButtons = new Map();
+		mouseWheelPosition = 0;
 
 		gamepads = [];
 		for(i in 0...4) {
@@ -37,7 +39,7 @@ class Input {
 
 	public function create() {
 		Keyboard.get().notify(onKeyDown, onKeyUp);
-		Mouse.get().notify(onMouseDown, onMouseUp, onMouseMove, null);
+		Mouse.get().notify(onMouseDown, onMouseUp, onMouseMove, onMouseWheelMove);
 
 		for(i in 0...4) {
 			Gamepad.get(i).notify(gamepads[i].onAxis, gamepads[i].onButton);
@@ -83,6 +85,10 @@ class Input {
 	public function getMousePosition() : Vector2 {
 		return mousePosition;
 	}
+	
+	public function getMouseWheelMovement() : Float {
+		return mouseWheelPosition;
+	}
 
 	/**
 		KEYBOARD EVENTS
@@ -125,8 +131,8 @@ class Input {
 		mousePosition.y = y;
 	}
 
-	private function onMouseWheelMove() {
-
+	private function onMouseWheelMove(x : Float) {
+		mouseWheelPosition = x;
 	}
 
 	/**

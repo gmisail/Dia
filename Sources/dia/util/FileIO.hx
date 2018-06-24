@@ -31,4 +31,8 @@ class FileIO {
 		return Json.parse(getText(name));
 	}
 
+	public function getXML(name : String) : Xml {
+		return Xml.parse(getText(name));
+	}
+
 }
