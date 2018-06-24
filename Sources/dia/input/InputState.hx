@@ -2,12 +2,14 @@ package dia.input;
 
 class InputState {
 
-	public var state : Bool = false;
-	public var justPressed : Bool = false;
-	public var justReleased : Bool = false;
+	private var state : Bool = false;
 
 	public function new() {
 
+	}
+
+	public function getState() : Bool {
+		return state;
 	}
 
 	public function press() {
@@ -16,5 +18,9 @@ class InputState {
 
 	public function release() {
 		state = false;
+	}
+
+	public function onKeyPress() {
+		
 	}
 }

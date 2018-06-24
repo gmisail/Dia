@@ -1,0 +1,14 @@
+{
+	"name": "dia",
+	"url" : "https://github.com/gmisail/dia/",
+	"license": "MIT",
+	"tags": ["cross", "gamedev"],
+	"description": "Cross platform game framework",
+	"version": "1.0.0",
+	"classPath": "Sources/",
+	"releasenote": "Initial release",
+	"contributors": ["gmisail"],
+	"dependencies": {
+	  "kha": ""
+	}
+  }

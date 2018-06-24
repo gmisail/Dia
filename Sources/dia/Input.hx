@@ -6,14 +6,15 @@ import kha.input.Keyboard;
 import kha.input.Mouse;
 import kha.input.Gamepad;
 
+import dia.input.InputState;
 import dia.input.Controller;
 
 class Input {
 
 	/* keyboard */
-	private var keys : Map<KeyCode, Bool>;
-	private var justPressed : Map<KeyCode, Bool>;
-	private var justReleased : Map<KeyCode, Bool>;
+	private var keys : Map<KeyCode, InputState>;
+	private var keyPressed : KeyCode->Void;
+	private var keyReleased : KeyCode->Void;
 
 	/* mouse */
 	private var mousePosition : Vector2;
@@ -24,8 +25,6 @@ class Input {
 
 	public function new() {
 		keys = new Map();
-		justPressed = new Map();
-		justReleased = new Map();
 		
 		mousePosition = new Vector2();
 		mouseButtons = new Map();
@@ -51,12 +50,16 @@ class Input {
 		
 	}
 
-	public function getKey(keyCode : KeyCode) : Bool {
-		return keys.get(keyCode);
+	public function onKeyPressed(callback : KeyCode->Void) {
+		keyPressed = callback;
 	}
 
-	public function getKeyJustPressed(keyCode : KeyCode) : Bool {
-		return justPressed.get(keyCode);
+	public function onKeyReleased(callback : KeyCode->Void) {
+		keyReleased = callback;
+	}
+
+	public function getKey(keyCode : KeyCode) : Bool {
+		return keys.get(keyCode).getState();
 	}
 
 	public function isGamepadAvailable(id : Int) : Bool {
@@ -84,11 +87,23 @@ class Input {
 	**/
 	
 	private function onKeyDown(keyCode : KeyCode) {
-		keys.set(keyCode, true);
+		var state = new InputState();
+		state.press();
+
+		if(keyPressed != null)
+			keyPressed(keyCode);
+
+		keys.set(keyCode, state);
 	}
 
 	private function onKeyUp(keyCode : KeyCode) {
-		keys.set(keyCode, false);
+		var state = keys.get(keyCode);
+		state.release();
+
+		if(keyReleased != null)
+			keyReleased(keyCode);
+
+		keys.set(keyCode, state);
 	}
 
 	/**

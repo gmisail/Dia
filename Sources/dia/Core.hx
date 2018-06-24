@@ -63,6 +63,7 @@ class Core {
 
 	public function update() {
 		Dia.timer.update();
+		Dia.input.update();
 		if(updateCallback != null) updateCallback();
 	}
 
